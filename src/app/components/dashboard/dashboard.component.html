@@ -1,0 +1,13 @@
+<nav class="navigation" id="navigation">
+    <div class="container">
+        <div class="logo">Heliware Dashboard</div>
+        <ul class="navigation-links">
+            <li [routerLink]="['/login']">Login</li>
+            <li [routerLink]="['/signup']">Sign UP</li>
+            <li (click)="logout()">Logout</li>
+            <a href="javascript:void(0);" class="icon" onclick="responsiveMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </ul>
+    </div>
+</nav>

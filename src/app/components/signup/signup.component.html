@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="card col-lg-6">
+  <h4 class="card-header">Heliware Register</h4>
+  <div class="card-body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Full Name</label>
+        <input type="text" formControlName="fullname" class="form-control" [ngClass]="{ 'is-invalid': submitted && this.form['fullname'].errors }" />
+        <div class="invalid-feedback ">
+          <div class="custom-breadcrumb" *ngIf="form.get('fullname').invalid && (form.get('fullname').dirty || form.get('fullname').touched)">Please enter Full Name</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstName">Email</label>
+        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && this.form['email'].errors }" />
+        <div class="invalid-feedback ">
+          <div class="custom-breadcrumb" *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)">Please enter valid email</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && this.form['password'].errors}" />
+        <div class="invalid-feedback ">
+          <div class="custom-breadcrumb" *ngIf="form.get('password').invalid && (form.get('password').dirty || form.get('password').touched)">Enter password min 6 characters</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button  class="btn btn-primary">
+          Register
+        </button>
+        <button [routerLink]="['/login']" class="btn button btn-primary">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<ngx-alerts></ngx-alerts>
